@@ -18,13 +18,13 @@ function ControlledForm() {
   };
 
   submitForm = (e) => {
-    let strDisplay = "";
+    alert(`
+      FirstName: ${fields.first_name}
+      LastName: ${fields.last_name}
+      Email: ${fields.email}
+      PhoneNumber: ${fields.phone_number}
+    `);
 
-    for (const [key, value] of Object.entries(fields)) {
-      strDisplay += `${key} : ${value} \n`;
-    }
-
-    alert(strDisplay);
     e.preventDefault();
   };
 
