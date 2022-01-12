@@ -18,43 +18,46 @@ function ControlledForm() {
   };
 
   submitForm = (e) => {
+    e.preventDefault();
     alert(`
       FirstName: ${fields.first_name}
       LastName: ${fields.last_name}
       Email: ${fields.email}
       PhoneNumber: ${fields.phone_number}
     `);
-
-    e.preventDefault();
   };
 
   return (
-    <form className="controlled-form">
+    <form onSubmit={submitForm} className="controlled-form">
       <FormInput
         onChange={handleInput}
+        type="input"
         label="First Name"
         name="first_name"
         value={fields.first_name}
       />
       <FormInput
         onChange={handleInput}
+        type="input"
         label="Last Name"
         name="last_name"
         value={fields.last_name}
       />
       <FormInput
         onChange={handleInput}
+        type="email"
         label="Email"
         name="email"
         value={fields.email}
       />
       <FormInput
         onChange={handleInput}
+        type="input"
         label="Phone Number"
         name="phone_number"
         value={fields.phone_number}
       />
-      <button onClick={submitForm} className="btn" name="Submit" value="Submit">
+      <button type="submit" className="btn" name="Submit" value="Submit">
         Submit
       </button>
     </form>

@@ -6,7 +6,7 @@ function FormInput(props) {
       <label>{props.label}</label>
       <input
         onChange={props.onChange}
-        type="input"
+        type={props.type}
         name={props.name}
         value={props.value}
       />
